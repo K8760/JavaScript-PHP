@@ -1,0 +1,23 @@
+ul {   
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 210px;
+    color: #14A1A1;
+    }
+
+li {
+    margin: 0;
+    padding: 0;
+    width: 204px;
+}
+
+input {
+    width: 200px;
+    color: #14A1A1;
+}
+
+button {
+    color: white;
+    background-color: #14A1A1;
+}

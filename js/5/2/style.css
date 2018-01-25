@@ -1,0 +1,12 @@
+ html, body {
+    margin-left: 50px;
+    padding: 0;
+}
+
+#map {
+    border: 1px dashed black;
+    margin-top: 50px;
+    height: 480px;
+    width:  800px;
+}
+

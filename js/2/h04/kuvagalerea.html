@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <script>
+            var mas = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg"]
+            function vaihdaKuva(kuva)
+            {
+                if (document.images) document.getElementById("kuva").src = mas[kuva-1]; 
+            }
+        </script>
+    </head>
+
+    <body>
+        <div float="left">
+            <span id="s1" onclick="vaihdaKuva(1)"><a href="#">KUVA1</a></span>
+            <span onclick="vaihdaKuva(2)"><a href="#">KUVA2</a></span>
+            <span onclick="vaihdaKuva(3)"><a href="#">KUVA3</a></span>
+            <span onclick="vaihdaKuva(4)"><a href="#">KUVA4</a></span>
+            <span onclick="vaihdaKuva(5)"><a href="#">KUVA5</a></span>
+        </div>
+        <div float="left">
+            <img id="kuva" src="1.jpg" float="left">
+        </div>
+    </body>
+</html> 

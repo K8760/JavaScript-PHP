@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function add() {
+               var element = document.getElementById("results");
+               var li = document.createElement("li");
+               var text = document.createTextNode("List Item");
+               li.appendChild(text);
+               element.appendChild(li); 
+            }
+            
+            function remove() {
+                var element = document.getElementById("results");
+                while (element.hasChildNodes())
+                {
+                    element.removeChild(element.firstChild);
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1> My list: </h1>
+        <ul id="results"> </ul>
+        <form>
+            <button type=button onclick="add()">Add</button>
+            <button type=button onclick="remove()">Remove</button>
+        </form>
+    </body>
+</html> 

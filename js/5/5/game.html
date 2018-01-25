@@ -1,0 +1,25 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Breakout Game with Canvas animation using requestrAnimFrame</title>
+	<script src="ball.js"></script>
+	<script src="paddle.js"></script>
+	<script src="block.js"></script>
+	<script src="breakout.js"></script>
+</head>
+
+<body onload="init()">
+<h2>Breakout Game</h2>
+<div>
+	<canvas id="myCanvas" width="400" height="800" style="border:1px solid #000000;"></canvas> 
+</div>
+
+<div>
+    <p id="lv"></p>
+	<button onclick="start_game()" id="startButton">Start a new Game</button>
+    <button onclick="pause_game()" id="pauseButton">Pause </button>
+</div>
+</body>
+</html>

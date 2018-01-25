@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+        <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+        <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+
+    <style>
+	 body {width: 400px; margin: auto}
+	.box {
+	  border: 1px dashed #000; padding: 15px; background-color: #adbed8;
+	}
+        img {width: 200px; height: 180px;}
+	input[type="text"] {width: 200px;}
+
+    </style>
+  </head>
+
+  <body>
+ 
+  <h3>Lemmiki laskuri</h3>
+  <div id="ratkaisu" class="box"></div>
+
+    <script type="text/babel">
+	var Autolaskuri = React.createClass({
+	   getInitialState: function() {
+        return {count: [0,0]};
+        },
+    
+    onImageClicked: function(index) {
+        let a = this.state.count;
+        a[index] = a[index] + 1;
+        this.setState({count: a});
+    },
+    
+	  render: function() {
+	    return (
+	      <div>
+              <span>Kitties: {this.state.count[0]} </span><br></br>
+		      <img src="kitty.jpg" name="i1" onClick={this.onImageClicked.bind(this, 0)}></img> <br></br>
+              <span>Puppies: {this.state.count[1]}</span><br></br>
+              <img src="puppy.jpg" name="i2" onClick={this.onImageClicked.bind(this, 1)}></img>
+	      </div>
+	    );
+	  }
+	});
+
+    ReactDOM.render(
+          <Autolaskuri />,
+          document.getElementById('ratkaisu')
+        );
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="style.css">
+  </head>
+  <body>
+        Give an address 1: <input type="text" id="adr1">
+        Give an address 2: <input type="text" id="adr2">
+        <input type="submit" id="nappi" value="Show the distance"><br><br>
+        <input type="radio" id="r1" name="b" value="WALKING"> By foot
+        <input type="radio" id="r2" name="b" value="DRIVING"> By car
+        <p id="message"></p>
+        <div id="map"></div>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="3.js"></script>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3furaMgfdYLAB_fI3vcBmjXIdSAEzDSo&callback=initMap">
+        </script>
+  </body>
+</html>

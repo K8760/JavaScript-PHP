@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tehtävä 4</title>
+</head>
+
+<body onload="drawToCanvas()">
+<p> Saada nestepinnan korkeus</p>
+<p id="korkeus" style="margin-left: 85px;">100 cm</p>
+<span>0cm</span><input type="range" id="slider" min="0" max="200" step="10" value="100" onchange="updateSlider(this.value)"><span>200cm</span>
+    
+<p>Tynnyrin pituus: 100 cm</p>
+<p>Tynnyrin halkaisija: 200 cm</p>
+<p>Tynnyrin tilavuus 3141.59 litraa</p>
+<canvas id="canvas" width="500" height="500" style="border:1px solid #000000;"/>
+
+<script>
+var nestemaara = Math.PI * 100 * 100 * 100;
+var h = 100;
+var r = 100;
+var alpha = Math.acos(h/r);
+var base = h * Math.tan(alpha);
+    
+function updateSlider(slideAmount) {
+        var slider = document.getElementById("korkeus");
+        slider.innerHTML = slideAmount + " cm";
+        h = parseInt(slideAmount);
+        var alpha = Math.acos(h/r);
+        nestemaara = Math.PI * 100 * 100 * parseInt(slideAmount);
+        drawToCanvas();
+}
+
+    
+function drawToCanvas() {
+    var canvas  = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle="#000000";
+	ctx.font="20px Arial";
+	ctx.fillText("Nestemaara: " + nestemaara,10,20);
+    ctx.beginPath();
+	// x, y, r, start, stop
+	ctx.arc(200,200,100,0,2*Math.PI);
+	ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(200, 200, r, alpha * Math.PI, 1 * Math.PI);
+    ctx.closePath();
+    ctx.fillStyle = '#FFAA00';
+    ctx.fill();
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = '#7F7F7F';
+    ctx.stroke();
+    
+}
+    
+</script>
+
+</body>
+</html>

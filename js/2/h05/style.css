@@ -1,0 +1,33 @@
+label
+{
+    background-color: deepskyblue;
+    float:left;
+    width: 50px;
+    margin: 5px;
+    text-align: center;
+    border: solid black;
+}
+
+div
+{
+    float: left;
+}
+
+#main
+{
+    width: 270px;
+}
+
+#in
+{
+    border: solid black;
+}
+
+input 
+{
+    float: left;
+    width: 50px;
+    margin:5px;
+    border: solid black;
+    text-align: center;
+}

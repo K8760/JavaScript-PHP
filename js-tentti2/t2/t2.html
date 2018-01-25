@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tenttitehtävä 3</title>
+  <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>SurfCity</h1>
+
+  <a href="#" onCLick="naytaJuttu(0)">Eka juttu</a>
+  <a href="#" onCLick="naytaJuttu(1)">Toka juttu</a>
+  <a href="#" onCLick="naytaJuttu(2)">Koka juttu</a>
+
+  <div class="juttu" id="d0">
+    <h1>Eka juttu</h1>
+    <p>1 11 111 1111 11111 111111 1111111 11111111 111111111</p>
+   </div>
+
+   <div class="juttu" id="d1">
+     <h1>Toka juttu</h1>
+     <p>2 22 222 2222 22222 222222 2222222 22222222 222222222</p>
+   </div>
+
+   <div class="juttu" id="d2">
+      <h1>Koka juttu</h1>
+      <p>3 33 333 3333 33333 333333 3333333 33333333 333333333</p>
+   </div>
+
+<script>
+  
+    function naytaJuttu(index) {  
+        switch(index){
+            case 0:
+                x = document.getElementsByClassName("juttu");
+                changeStyle(x);
+                a = document.getElementById("d0");
+                a.style.display = "block";             
+                break;
+            case 1:
+                x = document.getElementsByClassName("juttu");
+                changeStyle(x);
+                a = document.getElementById("d1");
+                a.style.display = "block";         
+                break;
+            case 2:
+                x = document.getElementsByClassName("juttu");
+                changeStyle(x);
+                a = document.getElementById("d2");
+                a.style.display = "block";
+                break;
+        }
+    }
+    
+    function changeStyle(x) {
+        for(i=0; i<x.length; i++) {
+            x[i].style.display = "none";
+        } 
+    }
+    
+</script>
+
+</body>
+</html>

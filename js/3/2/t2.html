@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <script>
+    var highlight = -1;
+    
+    function highlighting() {
+        var suggestions=document.getElementById("suggestions");
+        var childs = suggestions.getElementsByTagName("li");
+        for (i = 0; i < childs.length; i++) {
+            if (highlight == i) 
+            {
+                childs[i].style.backgroundColor = "#14A1A1";
+                childs[i].style.color = "white";
+                if (i > 0) 
+                {
+                    childs[i-1].style.backgroundColor = "white";
+                    childs[i-1].style.color = "#14A1A1";
+                }
+                if (i < childs.length-1) 
+                {   
+                    childs[i+1].style.backgroundColor = "white";
+                    childs[i+1].style.color = "#14A1A1";
+                }
+            }
+        }
+    }    
+    
+    function clear()
+    {
+        var element = document.getElementById("suggestions");
+        while (element.hasChildNodes())
+                {
+                    element.removeChild(element.firstChild);
+                }
+    }
+    
+    function red()
+    {
+        var suggestions=document.getElementById("suggestions");
+        var childs = suggestions.getElementsByTagName("li");
+        for (i = 0; i < childs.length; i++) {
+            if (highlight == i) 
+            {
+                var url = "ajax-suggest.php?q=" + childs[i].innerHTML;
+                break;
+            }
+        }
+        window.location = url;
+    }
+    
+    function ajax(url, funktio) {
+        var xmlhttp;
+        if (window.XMLHttpRequest) {
+        xmlhttp=new XMLHttpRequest();
+        } else {// IE5, IE6
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    xmlhttp.onreadystatechange=function() {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        funktio(xmlhttp.responseText);
+   }
+
+   xmlhttp.open("GET",url,true); //true = asynkronointi päällä
+   xmlhttp.send(); //GET-metodia käytettäessä ei välitetä mitään
+}
+        
+    function onKeyUp(event)
+    {
+        var input = document.getElementById("input"), suggestions=document.getElementById("suggestions");
+        switch (event.code)
+        {
+            case "Escape":
+                input.value="";
+                clear();
+                break;
+            case "ArrowDown":
+                var l = suggestions.childNodes.length;
+                if (l != highlight) highlight++;
+                highlighting();
+                break;
+            case "ArrowUp":
+                if (0 != highlight) highlight--;
+                highlighting();
+                break; 
+            case "Enter":
+                event.preventDefault();
+                //window.location.href="t2.html";
+                var childs = suggestions.getElementsByTagName("li");
+                for (i = 0; i < childs.length; i++) {
+                    if (highlight == i) 
+                    {
+                        input.value = childs[i].innerHTML;
+                    }
+                }
+                break;
+        default:
+            if(input.value === "")
+            {
+                clear(); //jos poistettiin viimeinen merkki
+                break;
+            }
+            var url = "ajax-suggest.php?q=" + input.value;
+
+            ajax(url, function(response)
+            {
+                clear(); //luodaan lista uudelleen
+                var names = response.split("\t");
+                for(var i = 0; i<names.length; i++)
+                {
+                    var li = document.createElement("li");
+                    var text = document.createTextNode(names[i]);
+                    li.appendChild(text);
+                    suggestions.appendChild(li);
+                }
+            })
+        } /*action="ajax-suggest.php"*/
+    }
+            
+    
+</script>
+
+<body>
+    <form method="get" onkeyup="onKeyUp(event);">
+        <input id="input" name="q" type="text" autocomplete="off">
+        <button type=button onclick="red()">Search</button>
+        <ul id="suggestions" onclick="red()"> </ul>
+    </form>
+</body>
+

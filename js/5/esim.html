@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Karttademo 1</title>
+    <style>
+      html, body {
+        margin-left: 50px;
+        padding: 0;
+      }
+
+      #map {
+	border: 1px dashed black;
+        height: 480px;
+        width:  640px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Karttademo 1</h1>
+    <p id="p1"></p>
+    <div id="map"></div>
+    <script>
+
+      function initMap() {
+        // Piippukatu 2:
+        var myLatLng = {lat: 62.24162229999999, lng: 25.7597309};
+	document.getElementById('p1').innerHTML = "Piippukatu 2<br>lat: "
+                                                  + myLatLng.lat.toFixed(2) + " lng: " + myLatLng.lng.toFixed(2);
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'I am here!'
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3furaMgfdYLAB_fI3vcBmjXIdSAEzDSo&callback=initMap">
+    </script>
+  </body>
+</html>

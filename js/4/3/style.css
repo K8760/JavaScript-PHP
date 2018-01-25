@@ -1,0 +1,24 @@
+p 
+{
+    display:none;
+    margin:0;
+    border-left: solid grey 1px;
+    border-right: solid grey 1px;
+}
+
+article
+{
+    width: 500px;
+    padding: 0;
+    margin:0;
+    border-bottom: solid black 1px;
+    border-top: solid black 1px;
+}
+
+h3
+{
+    color: white;
+    background-color: grey;
+    padding: 0;
+    margin:0;
+}

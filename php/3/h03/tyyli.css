@@ -1,0 +1,263 @@
+/* Ari Rantala */
+
+html {
+	 /*  NÃ¤yttÃ¤Ã¤ vertikaalisen scrollbarin aina */
+    overflow-y: scroll;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Liberation Sans", "Nimbus Sans L", "FreeSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color:#000000;
+}
+
+h1,  #maintitle {
+  font-style: italic;
+  font-weight: bold;
+  color: #53949c;
+}
+
+h1, h2, h3, h4, #header table tr td .url{
+font-family: "DejaVu Sans", "Bitstream Vera Sans", Geneva, Verdana, sans-serif;
+
+}
+
+#container {
+	position: relative;
+	clear: both;
+  margin: 1px 10%;
+  /*border: 1px solid #333333;*/
+  background-color: #ffffff;
+}
+
+#header {
+  background-color:#ffffff;
+  /*border-bottom: 1px solid #333333;*/
+  clear: both;
+}
+
+div#contentwrapper {
+	position: relative;
+	width: 100%;
+}
+
+#header table tr td .url {
+    font-style: italic;
+	font-size: 120%;
+	font-weight: normal;
+	color: #53949c;
+	margin:0;
+	padding: 0px 0px 0px 0px;
+}
+
+
+#hakulomake {
+	/*float: right;*/
+	width: 260px;
+	margin: 15px 15px 0 0;
+}
+
+.loota {
+	width: 55%;
+	margin-left: auto;
+  margin-right: 0px;
+}
+
+#verkkohakulomake {
+	background-color: #e2eff0;
+	color: #000000;
+	border: 1px solid #888888;
+	font-size: 80%;
+	/*float: right;
+	width: 260px;
+	margin: 15px 15px 0 0;
+	*/
+}
+
+.vloota {
+	background-color: #ffffff;
+	color: #000000;
+	border: 1px solid #888888;
+	/*
+	width: 55%;
+	margin-left: auto;
+  margin-right: 0px;*/
+}
+
+
+#footer {
+	position: fixed;
+  width: 100%;
+  background-color: #eeeeee;
+  text-align: center;
+  color: #555555;
+  padding: 10px;
+  border-top: 1px dashed #888888;
+  bottom: 0;
+}
+
+/* Navigointi */
+.menu{
+   position: relative;
+	clear: both;
+	width: 100%;
+	text-decoration: none;
+	/*background: #53949c;*/
+}
+
+.menu ul{
+	background: #53949c;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 0px;
+	margin-left: -20px;
+}
+
+.menu ul li {
+	display: inline;
+	text-transform: uppercase;
+	padding: 1px 5px 1px 5px;
+	margin: 0;
+}
+
+.menu ul li a, .menu ul li a:visited {
+	text-decoration: none;
+	margin: 0;
+	padding: 1px 5px 1px 5px;
+	color: #dddddd;
+}
+
+.menu ul li a:hover, .menu ul li a:visited:hover {
+	text-decoration: none;
+	padding: 1px 5px 1px 5px;
+	margin: 0px;
+	background: #9ecbce;
+	color: #ffffff;
+}
+
+.menu ul li a:active, .menu ul li a:visited:active {
+  text-decoration: none; 
+	padding: 1px 5px 1px 5px;
+	margin: 0px;
+	background: #9ecbce;
+}
+
+
+#content {
+ position:absolute;
+ top:0;
+ left:0;
+ margin-left: 10px;
+ margin-right: 300px;
+ padding-bottom: 30px;
+}
+
+/**--Sidebar--**/
+
+#sidebar {
+ position:absolute;
+ top:0;
+ right:0;
+ width: 260px;
+ margin-right: 10px;
+ margin-top: 10px;
+}
+
+#sidebar h2 {
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #555555;
+	margin: 0 0 8px 0;
+	padding: 5px 0;
+	border-top: 1px dashed #999999;
+	border-bottom: 1px dashed #999999;
+}
+
+#sidebar ul {
+	padding: 0;
+	list-style-type: none;
+	margin: 0px 0px 30px 0px;
+}
+
+#sidebar ul li {
+	text-decoration: none;
+	margin: 2px 0 2px 0;
+	padding: 0 0 5px 0;
+	color: #555555;
+	background: #ffffff
+}
+
+#sidebar ul li a, #sidebar ul li a:visited{
+	color: #777777;
+	text-decoration: none;
+	padding: 2px;
+	margin: 0;
+}
+
+#sidebar ul li a:hover, #sidebar ul li a:visited:hover {
+	text-decoration: none;
+	padding: 2px;
+	margin: 0;
+	background: #9ecbce;
+	color: #ffffff; 
+}
+
+#content .artikkeli {
+	border-top: 1px dashed #999999;
+	color: #333333;
+	margin:  10px 0px 0px 0px;
+	padding: 2px 0px 0px 0px;
+}
+
+#content .julkaisutiedot {
+	display: block;
+	color: #888888;
+	font-size: 14px;
+	margin:0;
+	padding: 0px 0px 10px 0;
+}
+
+#content .artikkeli h2, #content h2 {
+	font-weight: normal;
+	color: #53949c;
+	margin:0;
+	padding: 5px 0px 5px 0;
+}
+
+#content .artikkeli h3,  #content h3{
+	font-weight: normal;
+	color: #53949c;
+	margin:0;
+	padding: 5px 0px 5px 0;
+}
+
+#content h4{
+	display: inline;
+	font-weight: normal;
+	background: #53949c;
+	color: #dddddd;
+	margin:0;
+	padding: 5px 0px 5px 0;
+}
+
+
+
+#content .artikkeli a, #content .artikkeli a:visited {
+	color: #777777;
+	text-decoration: none;
+	padding: 2px;
+	margin: 0;
+}
+
+#content .artikkeli a:hover, #content .artikkeli a:visited:hover {
+	text-decoration: none;
+	padding: 2px;
+	margin: 0;
+	background: #9ecbce;
+	color: #ffffff; 
+}

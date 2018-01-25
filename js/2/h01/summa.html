@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function laskeSumma(a,b) {
+                var s = parseInt(a) + parseInt(b);
+                return s;
+            }
+            
+            function tulostaSumma(a,b) {
+                var summa = laskeSumma(a,b);
+                var div = document.getElementById("results");
+                div.innerHTML = summa;
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1> Laske luvut yhteen </h1>
+        <form id="f">
+            <input type=text id=n1>
+            <input type=text id=n2>
+            <button type=button onclick="tulostaSumma(f.n1.value, f.n2.value)">Count</button>
+        </form>
+        <h1> Tulos: </h1>
+        <div id="results"></div>
+    </body>
+</html> 
